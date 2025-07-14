@@ -111,11 +111,12 @@ export async function POST(req: Request) {
     console.log("Blog processed and stored successfully.");
     return NextResponse.json({ summary, urdu });
 
-  } catch (error: any) {
-    console.error(" ERROR:", error.message || error);
-    return NextResponse.json(
-      { error: error.message || 'Failed to summarize blog' },
-      { status: 500 }
-    );
-  }
+  } catch (error) {
+  const message = error instanceof Error ? error.message : 'Unknown error';
+  console.error(" ERROR:", message);
+  return NextResponse.json(
+    { error: message },
+    { status: 500 }
+  );
+}
 }

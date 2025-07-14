@@ -24,7 +24,7 @@ export default function Home() {
       const data = await res.json();
       setSummary(data.summary);
       setUrduSummary(data.urdu);
-    } catch (err) {
+    } catch {
       alert('Something went wrong! Please try again.');
     }
     setLoading(false);
