@@ -86,3 +86,4 @@ npm run dev
 Visit `http://localhost:3000` to use the app.
 
 Deployment Link: 
+https://nexium-rida-batool-assign2.vercel.app/
